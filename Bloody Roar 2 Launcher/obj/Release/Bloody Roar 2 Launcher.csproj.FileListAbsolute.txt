@@ -1,0 +1,11 @@
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\bin\Release\Bloody Roar 2 Launcher.exe.config
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\bin\Release\Bloody Roar 2 Launcher.exe
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\bin\Release\Bloody Roar 2 Launcher.pdb
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.csproj.AssemblyReference.cache
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.csproj.SuggestedBindingRedirects.cache
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\FileDownloaderApp.MainForm.resources
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody_Roar_2_Launcher.Properties.Resources.resources
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.csproj.GenerateResource.cache
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.csproj.CoreCompileInputs.cache
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.exe
+C:\Users\nkcat\source\repos\Bloody Roar 2 Launcher\Bloody Roar 2 Launcher\obj\Release\Bloody Roar 2 Launcher.pdb
