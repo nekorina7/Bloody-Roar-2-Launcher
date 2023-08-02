@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -12,6 +12,7 @@ namespace FileDownloaderApp
     public partial class MainForm : Form
     {
         private bool isPaused = false;
+        private string originalWorkingDirectory;
 
         public MainForm()
         {
@@ -113,30 +114,48 @@ namespace FileDownloaderApp
                 MessageBox.Show("proxy.exe not found in the game folder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string gameFolder = "BR2 Online by NK"; // Change this to the actual folder name if it's different
-            string duckstationExePath = Path.Combine(gameFolder, "duckstation-qt-x64-ReleaseLTCG.exe");
-            string romFilePath = Path.Combine(gameFolder, "roms/SCUS-94424.cue");
-            string stateFilePath = Path.Combine(gameFolder, "savestates/netplay/SCUS-94424.sav");
-            string arguments = $"-fastboot \"{romFilePath}\" -statefile \"{stateFilePath}\"";
+            string duckstationExeName = "duckstation-qt-x64-ReleaseLTCG.exe";
+            string duckstationExePath = Path.Combine(gameFolder, duckstationExeName);
 
             if (File.Exists(duckstationExePath))
             {
                 try
                 {
-                    Process.Start(duckstationExePath, arguments);
+                    // Store the current working directory
+                    string currentDirectory = Environment.CurrentDirectory;
+
+                    // Set the working directory to the game folder
+                    Environment.CurrentDirectory = Path.Combine(Environment.CurrentDirectory, gameFolder);
+
+                    string romFilePath = Path.Combine("roms", "SCUS-94424.cue");
+                    string stateFilePath = Path.Combine("savestates", "netplay", "SCUS-94424.sav");
+                    string arguments = $"-fastboot \"{romFilePath}\" -statefile \"{stateFilePath}\"";
+
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = duckstationExeName,
+                        Arguments = arguments
+                    };
+
+                    // Start Duckstation and wait for it to exit
+                    Process duckstationProcess = Process.Start(psi);
+                    duckstationProcess.WaitForExit();
+
+                    // Restore the original working directory
+                    Environment.CurrentDirectory = currentDirectory;
                 }
                 catch (Exception ex)
                 {
-                    // Show an error message if there was an issue starting the process
-                    MessageBox.Show($"Failed to start duckstation-qt-x64-ReleaseLTCG.exe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Show an error message if there was an issue starting or waiting for Duckstation
+                    MessageBox.Show($"Failed to start Duckstation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("duckstation-qt-x64-ReleaseLTCG.exe not found in the game folder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Duckstation not found in the game folder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
