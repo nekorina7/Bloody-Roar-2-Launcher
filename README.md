@@ -12,7 +12,7 @@
    - Host
      - ###### *Type s --> Enter --> Port type `31200` --> Enter --> Copy IP Address and give it to your friend*
    - Client
-     - ###### *Type c --> Enter --> Type the IP Adress your friend give you --> Enter --> Port type `31200` --> Enter --> Copy IP Address and give it to your friend*
+     - ###### *Type c --> Enter --> Type the IP Adress your friend give you --> Enter --> Port type `31200` --> Enter
 
    > *If a Windows Security Alert popup appears, check all checkboxes and click on "Allow access"*
 
